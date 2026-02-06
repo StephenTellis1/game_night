@@ -1,0 +1,391 @@
+[
+    {
+        "id": "count_vowels",
+        "title": "Count Vowels",
+        "language": "javascript",
+        "code": "function countVowels(text) {\n  // Initialize vowel count\n  let count = 0;\n  \n  // Define vowels\n  const vowels = 'aeiouAEIOU';\n  \n  // Loop through each character\n  for (let i = 0; i < text.length; i++) {\n    let character = text[i];\n    \n    // Check if character is a vowel\n    if (vowels.includes(character)) {\n      count = count + 1;\n    }\n  }\n  \n  // Return the count\n  return count;\n}",
+        "testCases": [
+            {
+                "input": "hello world",
+                "expected": 3
+            },
+            {
+                "input": "AEIOU",
+                "expected": 5
+            },
+            {
+                "input": "xyz",
+                "expected": 0
+            }
+        ],
+        "runner": "countVowels(INPUT)"
+    },
+    {
+        "id": "sum_array",
+        "title": "Sum Array",
+        "language": "javascript",
+        "code": "function sumArray(numbers) {\n  // Initialize total\n  let total = 0;\n  \n  // Check if array is empty\n  if (numbers.length === 0) {\n    return 0;\n  }\n  \n  // Add each number\n  for (let i = 0; i < numbers.length; i++) {\n    let num = numbers[i];\n    total = total + num;\n  }\n  \n  // Return sum\n  return total;\n}",
+        "testCases": [
+            {
+                "input": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "expected": 15
+            },
+            {
+                "input": [
+                    10,
+                    -5,
+                    3
+                ],
+                "expected": 8
+            },
+            {
+                "input": [],
+                "expected": 0
+            }
+        ],
+        "runner": "sumArray(INPUT)"
+    },
+    {
+        "id": "reverse_string",
+        "title": "Reverse String",
+        "language": "javascript",
+        "code": "function reverseString(text) {\n  // Initialize result\n  let result = '';\n  \n  // Get length\n  let length = text.length;\n  \n  // Loop backwards\n  for (let i = length - 1; i >= 0; i--) {\n    let char = text[i];\n    result = result + char;\n  }\n  \n  // Return reversed string\n  return result;\n}",
+        "testCases": [
+            {
+                "input": "hello",
+                "expected": "olleh"
+            },
+            {
+                "input": "abc",
+                "expected": "cba"
+            },
+            {
+                "input": "a",
+                "expected": "a"
+            }
+        ],
+        "runner": "reverseString(INPUT)"
+    },
+    {
+        "id": "marks_stats_c",
+        "title": "Marks Statistics (C)",
+        "language": "c",
+        "code": "#include <stdio.h>\n\nint main() {\n    int n = 5;\n    int marks[5] = {45, 78, 32, 90, 60};\n    int sum = 0, max = 0, failCount = 0;\n\n    for (int i = 0; i < n; i++) {\n        sum = sum + marks[i];\n\n        if (marks[i] > max)\n            max = marks[i];\n\n        if (marks[i] < 40)\n            failCount++;\n    }\n\n    printf(\"Average = %d\\n\", sum / n);\n    printf(\"Highest = %d\\n\", max);\n    printf(\"Failed = %d\\n\", failCount);\n\n    return 0;\n}",
+        "testCases": [
+            {
+                "input": null,
+                "expected": "Average = 61\nHighest = 90\nFailed = 1"
+            }
+        ]
+    },
+    {
+        "id": "count_vowels_c",
+        "title": "Vowels Consonants (C)",
+        "language": "c",
+        "code": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[100];\n    int vowels = 0, consonants = 0;\n\n    if (fgets(str, 100, stdin) == NULL) return 0;\n\n    for (int i = 0; str[i] != '\\0'; i++) {\n        char c = str[i];\n        // Basic lowercasing logic mimicking snippet or valid check\n        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||\n            c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')\n            vowels++;\n        else if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))\n            consonants++;\n    }\n\n    printf(\"%d %d\\n\", vowels, consonants);\n    return 0;\n}",
+        "testCases": [
+            {
+                "input": "hello",
+                "expected": "2 3"
+            }
+        ]
+    },
+    {
+        "id": "primes_c",
+        "title": "Primes (C)",
+        "language": "c",
+        "code": "#include <stdio.h>\n\nint main() {\n    int n = 10;\n\n    for (int i = 1; i <= n; i++) {\n        int isPrime = 1;\n        for (int j = 2; j < i; j++) {\n            if (i % j == 0)\n                isPrime = 0;\n        }\n        if (isPrime)\n            printf(\"%d \", i);\n    }\n    return 0;\n}",
+        "testCases": [
+            {
+                "input": null,
+                "expected": "1 2 3 5 7 "
+            }
+        ]
+    },
+    {
+        "id": "while_c",
+        "title": "While Loop (C)",
+        "language": "c",
+        "code": "#include <stdio.h>\n\nint main() {\n    int i = 10;\n    while (i < 5) {\n        printf(\"%d \", i);\n        i++;\n    }\n    return 0;\n}",
+        "testCases": [
+            {
+                "input": null,
+                "expected": ""
+            }
+        ]
+    },
+    {
+        "id": "palindrome_c",
+        "title": "Palindrome (C)",
+        "language": "c",
+        "code": "#include <stdio.h>\n\nint main() {\n    int n = 121;\n    int temp = n, rev = 0;\n\n    while (n > 0) {\n        rev = rev * 10 + n % 10;\n        n /= 10;\n    }\n\n    if (temp == rev)\n        printf(\"Palindrome\\n\");\n    else\n        printf(\"Not Palindrome\\n\");\n\n    return 0;\n}",
+        "testCases": [
+            {
+                "input": null,
+                "expected": "Palindrome"
+            }
+        ]
+    },
+    {
+        "id": "leap_year_c",
+        "title": "Leap Year (C)",
+        "language": "c",
+        "code": "#include <stdio.h>\n\nint main() {\n    int year = 1900;\n\n    if (year % 4 == 0)\n        printf(\"Leap Year\\n\");\n    else\n        printf(\"Not Leap Year\\n\");\n\n    return 0;\n}",
+        "testCases": [
+            {
+                "input": null,
+                "expected": "Leap Year"
+            }
+        ]
+    },
+    {
+        "id": "find_max",
+        "title": "Find Maximum",
+        "language": "javascript",
+        "code": "function findMax(numbers) {\n  // Handle empty array\n  if (numbers.length === 0) {\n    return null;\n  }\n  \n  // Start with first number\n  let max = numbers[0];\n  \n  // Check each number\n  for (let i = 1; i < numbers.length; i++) {\n    let current = numbers[i];\n    if (current > max) {\n      max = current;\n    }\n  }\n  \n  // Return maximum\n  return max;\n}",
+        "testCases": [
+            {
+                "input": [
+                    1,
+                    5,
+                    3,
+                    9,
+                    2
+                ],
+                "expected": 9
+            },
+            {
+                "input": [
+                    -1,
+                    -5,
+                    -3
+                ],
+                "expected": -1
+            },
+            {
+                "input": [
+                    42
+                ],
+                "expected": 42
+            }
+        ],
+        "runner": "findMax(INPUT)"
+    },
+    {
+        "id": "count_words",
+        "title": "Count Words",
+        "language": "javascript",
+        "code": "function countWords(sentence) {\n  // Handle empty string\n  if (sentence.length === 0) {\n    return 0;\n  }\n  \n  // Trim whitespace\n  let trimmed = sentence.trim();\n  \n  // Check empty after trim\n  if (trimmed.length === 0) {\n    return 0;\n  }\n  \n  // Split by spaces\n  let words = trimmed.split(' ');\n  \n  // Filter empty strings\n  let filtered = words.filter(w => w.length > 0);\n  \n  // Return count\n  return filtered.length;\n}",
+        "testCases": [
+            {
+                "input": "hello world",
+                "expected": 2
+            },
+            {
+                "input": "  one  two  three  ",
+                "expected": 3
+            },
+            {
+                "input": "",
+                "expected": 0
+            }
+        ],
+        "runner": "countWords(INPUT)"
+    },
+    {
+        "id": "is_palindrome",
+        "title": "Check Palindrome",
+        "language": "javascript",
+        "code": "function isPalindrome(text) {\n  // Convert to lowercase\n  let lower = text.toLowerCase();\n  \n  // Remove spaces\n  let clean = lower.replace(/ /g, '');\n  \n  // Get length\n  let length = clean.length;\n  \n  // Check from both ends\n  for (let i = 0; i < length / 2; i++) {\n    let left = clean[i];\n    let right = clean[length - 1 - i];\n    \n    if (left !== right) {\n      return false;\n    }\n  }\n  \n  return true;\n}",
+        "testCases": [
+            {
+                "input": "radar",
+                "expected": true
+            },
+            {
+                "input": "hello",
+                "expected": false
+            },
+            {
+                "input": "A man a plan a canal Panama",
+                "expected": true
+            }
+        ],
+        "runner": "isPalindrome(INPUT)"
+    },
+    {
+        "id": "factorial",
+        "title": "Factorial",
+        "language": "javascript",
+        "code": "function factorial(n) {\n  // Handle 0 and 1\n  if (n === 0) {\n    return 1;\n  }\n  if (n === 1) {\n    return 1;\n  }\n  \n  // Initialize result\n  let result = 1;\n  \n  // Multiply from 2 to n\n  for (let i = 2; i <= n; i++) {\n    result = result * i;\n  }\n  \n  // Return result\n  return result;\n}",
+        "testCases": [
+            {
+                "input": 5,
+                "expected": 120
+            },
+            {
+                "input": 0,
+                "expected": 1
+            },
+            {
+                "input": 3,
+                "expected": 6
+            }
+        ],
+        "runner": "factorial(INPUT)"
+    },
+    {
+        "id": "fibonacci",
+        "title": "Fibonacci",
+        "language": "javascript",
+        "code": "function fibonacci(n) {\n  // Handle base cases\n  if (n === 0) {\n    return 0;\n  }\n  if (n === 1) {\n    return 1;\n  }\n  \n  // Initialize first two numbers\n  let prev = 0;\n  let curr = 1;\n  \n  // Calculate up to n\n  for (let i = 2; i <= n; i++) {\n    let next = prev + curr;\n    prev = curr;\n    curr = next;\n  }\n  \n  return curr;\n}",
+        "testCases": [
+            {
+                "input": 10,
+                "expected": 55
+            },
+            {
+                "input": 0,
+                "expected": 0
+            },
+            {
+                "input": 6,
+                "expected": 8
+            }
+        ],
+        "runner": "fibonacci(INPUT)"
+    },
+    {
+        "id": "average",
+        "title": "Calculate Average",
+        "language": "javascript",
+        "code": "function calculateAverage(numbers) {\n  // Check empty array\n  if (numbers.length === 0) {\n    return 0;\n  }\n  \n  // Sum all numbers\n  let sum = 0;\n  for (let i = 0; i < numbers.length; i++) {\n    sum = sum + numbers[i];\n  }\n  \n  // Calculate average\n  let count = numbers.length;\n  let average = sum / count;\n  \n  // Return average\n  return average;\n}",
+        "testCases": [
+            {
+                "input": [
+                    10,
+                    20,
+                    30
+                ],
+                "expected": 20
+            },
+            {
+                "input": [
+                    5
+                ],
+                "expected": 5
+            },
+            {
+                "input": [
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "expected": 2.5
+            }
+        ],
+        "runner": "calculateAverage(INPUT)"
+    },
+    {
+        "id": "count_char",
+        "title": "Count Character",
+        "language": "javascript",
+        "code": "function countCharacter(text, char) {\n  // Initialize counter\n  let count = 0;\n  \n  // Convert to lowercase\n  let lowerText = text.toLowerCase();\n  let lowerChar = char.toLowerCase();\n  \n  // Loop through text\n  for (let i = 0; i < lowerText.length; i++) {\n    let current = lowerText[i];\n    \n    if (current === lowerChar) {\n      count = count + 1;\n    }\n  }\n  \n  return count;\n}",
+        "testCases": [
+            {
+                "input": [
+                    "hello",
+                    "l"
+                ],
+                "expected": 2
+            },
+            {
+                "input": [
+                    "AABBCC",
+                    "a"
+                ],
+                "expected": 2
+            },
+            {
+                "input": [
+                    "xyz",
+                    "a"
+                ],
+                "expected": 0
+            }
+        ],
+        "runner": "countCharacter(INPUT[0], INPUT[1])"
+    },
+    {
+        "id": "title_case",
+        "title": "Title Case",
+        "language": "javascript",
+        "code": "function toTitleCase(text) {\n  // Split into words\n  let words = text.split(' ');\n  \n  // Process each word\n  let result = [];\n  for (let i = 0; i < words.length; i++) {\n    let word = words[i];\n    \n    if (word.length > 0) {\n      let first = word[0].toUpperCase();\n      let rest = word.slice(1).toLowerCase();\n      result.push(first + rest);\n    }\n  }\n  \n  // Join words\n  return result.join(' ');\n}",
+        "testCases": [
+            {
+                "input": "hello world",
+                "expected": "Hello World"
+            },
+            {
+                "input": "JAVASCRIPT",
+                "expected": "Javascript"
+            },
+            {
+                "input": "a b c",
+                "expected": "A B C"
+            }
+        ],
+        "runner": "toTitleCase(INPUT)"
+    },
+    {
+        "id": "filter_evens",
+        "title": "Filter Even Numbers",
+        "language": "javascript",
+        "code": "function filterEvens(numbers) {\n  // Initialize result array\n  let evens = [];\n  \n  // Loop through numbers\n  for (let i = 0; i < numbers.length; i++) {\n    let num = numbers[i];\n    \n    // Check if even\n    let remainder = num % 2;\n    if (remainder === 0) {\n      evens.push(num);\n    }\n  }\n  \n  // Return even numbers\n  return evens;\n}",
+        "testCases": [
+            {
+                "input": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                ],
+                "expected": [
+                    2,
+                    4,
+                    6
+                ]
+            },
+            {
+                "input": [
+                    1,
+                    3,
+                    5
+                ],
+                "expected": []
+            },
+            {
+                "input": [
+                    2,
+                    4,
+                    8
+                ],
+                "expected": [
+                    2,
+                    4,
+                    8
+                ]
+            }
+        ],
+        "runner": "filterEvens(INPUT)"
+    }
+]

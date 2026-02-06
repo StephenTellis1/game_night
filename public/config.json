@@ -1,0 +1,10 @@
+{
+  "minBugs": 3,
+  "maxBugs": 5,
+  "points": {
+    "bugNotFixed": 2,
+    "bugFixed": 3
+  },
+  "roundPairs": 3,
+  "autoSaveInterval": 5000
+}
