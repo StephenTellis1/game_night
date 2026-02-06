@@ -1,16 +1,54 @@
-# React + Vite
+# League of Lag 2026
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A competitive coding sabotage game where players introduce bugs into code snippets, and then fix bugs introduced by others.
 
-Currently, two official plugins are available:
+## 🛠️ Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To run this game on your laptop (Linux/Mac/PC), you need:
 
-## React Compiler
+1.  **Node.js** (v18+) - [Download](https://nodejs.org/)
+2.  **Git** - Version control.
+3.  **GCC compiler** - Required for running C/C++ snippets.
+    - *Linux*: `sudo apt install build-essential`
+    - *Mac*: `xcode-select --install`
+    - *Windows*: Install MinGW or use WSL.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📥 Setup & Sync
 
-## Expanding the ESLint configuration
+1.  **Clone the repository** (first time):
+    ```bash
+    git clone <YOUR_REPO_URL>
+    cd league-of-lag
+    ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2.  **Sync latest changes** (updates):
+    ```bash
+    git pull origin main
+    ```
+
+3.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+## 🚀 How to Run
+
+You need **two terminal windows**:
+
+### Terminal 1: Game Server (Validation Core)
+This handles game logic, C compilation, and scoring.
+```bash
+npm run server
+```
+
+### Terminal 2: Frontend (Game UI)
+This hosts the web interface. 
+**Note:** Runs on Port 80 (requires sudo privileges).
+```bash
+sudo npm run dev
+```
+
+Open your browser at `http://localhost` (or your Network IP shown in terminal).
+
+## 📄 Documentation
+- [DEPLOY.md](./DEPLOY.md): Detailed hosting guide.
